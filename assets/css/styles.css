@@ -254,6 +254,8 @@ h2 {
     text-align: center;
     padding-top: 45px;
     font-size: 14px;
+    width: 91%;
+    text-align: left;
 }
 
 .faq {
@@ -275,11 +277,6 @@ h2 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     transition: 0.2s;
-}
-
-.dropdown-content {
-    width: 91%;
-    text-align: left;
 }
 
 .sub-pricing,
