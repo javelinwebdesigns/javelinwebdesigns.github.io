@@ -277,6 +277,11 @@ h2 {
     transition: 0.2s;
 }
 
+.dropdown-content {
+    width: 91%;
+    text-align: left;
+}
+
 .sub-pricing,
 .pricing {
     width: 100%;
