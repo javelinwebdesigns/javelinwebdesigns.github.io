@@ -218,6 +218,8 @@ h2 {
     opacity: 0;
     position: absolute;
     z-index: 1;
+    margin-top: 5px;
+    margin-bottom: 5px;
     transition: 0.2s;
 }
 
@@ -255,8 +257,6 @@ h2 {
     font-size: 14px;
     width: 91%;
     text-align: left;
-    margin-top: 5px;
-    margin-botton: 5px;
 }
 
 .faq {
