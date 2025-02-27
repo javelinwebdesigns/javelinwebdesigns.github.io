@@ -394,28 +394,10 @@ footer .footer-right .socials i {
     transition: 0.2s;
 }
 
-footer .footer-right .socials .youtube {
-    color: #af0000;
-}
-
-footer .footer-right .socials .youtube:hover {
-    color: #5c0000;
-}
-
-footer .footer-right .socials .instagram {
-    color: #bd0ce0;
-}
-
-footer .footer-right .socials .instagram:hover {
-    color: #59005c;
-}
-
+footer .footer-right .socials .youtube,
+footer .footer-right .socials .instagram,
 footer .footer-right .socials .twitter {
-    color: #0086d3;
-}
-
-footer .footer-right .socials .twitter:hover {
-    color: #0b54f1;
+    color: #000;
 }
 
 footer .footer-right p {
