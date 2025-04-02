@@ -1,62 +1,69 @@
-console.log("Welcome to Javelin Web Design!");
+console.log("Hello There");
 
-const button = document.querySelector(".enter-button");
-const nameBox = document.querySelector("#name-box");
-const emailBox = document.querySelector("#email-box");
-const messageBox = document.querySelector("#message-box");
+var nameBox = document.querySelector("#name-box");
+var emailBox = document.querySelector("#email-box");
+var messageBox = document.querySelector("#message-box");
+var enterButton = document.querySelector(".enter-button")
 
-function getCookie(name) {
-    const decoded = decodeURIComponent(document.cookie);
-    const array = decoded.split(",");
-    let result = null;
+async function sendRequest(url, data) {
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
 
-    array.forEach(element => {
-        if (element.indexOf(name) == 0) {
-            result = element.substring(name.length + 1);
+        if (response.status === 204 || response.status === 200) { 
+            alert("Thank you for contacting us, we will get back to you as soon as possible.");
+            return;
         }
-    })
 
-    return result;
-}
 
-function setCookie(name, value, daysToLive) {
-    const date = new Date();
-    date.setTime(date.getTime() + (daysToLive * 24 * 60 * 60 *1000));
+        if (!response.ok) {
+            alert("Something went wrong on our end. Sorry about that.");
+            throw new Error("HTTP Error!");
+        }
 
-    let expires = `expires=${date.toUTCString()}`;
-    document.cookie = `${name}=${value}; ${expires}; path=/`
-}
+        const result = await response.json();
+        alert("Thank you for contacting us, we will get back to you as soon as possible.");
+        return result
+    } catch(error) {
+        alert("Something went wrong on our end. Sorry about that.");
+    }
+};
 
-function sendMessage() {
-    if (emailBox.value === "" || nameBox.value === "" || messageBox.value === "") {
-        alert("Please fill out empty inputs.");
-        return
+function enter() {
+    var name = nameBox.value;
+    var email = emailBox.value;
+    var message = messageBox.value;
+
+    const unsafeChars = /[<>\"'`;()=+&|']/;
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-z0-9.-]+\.[a-zA-Z]{2,}$/
+    if (unsafeChars.test(name) || unsafeChars.test(email) || unsafeChars.test(message)) {
+        alert("Un-supported characters used.");
+        return;
     }
 
-    if (getCookie("canMessage") !== null) {
-        alert("Please wait 24 hours before sending another message.");
-        return
+    if (name == "" || email == "" || message == "") {
+        alert("Some field is incomplete.");
+        return;
     }
 
-    const webhookUrl = "https://discordapp.com/api/webhooks/1295690344482209792/1MkSbSIhBT7fTgg0-JtNEqaphJLW8dijdic3Hpuo7-x_Ym9dEIp2pQMO6oqY9ZZt82HE";
-    const message = {
-        embeds: [
-            {
-                title: nameBox.value,
-                description: `Email: ${emailBox.value}; Message: ${messageBox.value}`
-            }
-        ]
+    if (!emailRegex.test(email)) {
+        alert("Invalid Email");
+        return;
+    }
+
+    const url = "https://unified-early-ox.ngrok-free.app/";
+    const data = {
+        name: name,
+        email: email,
+        message: message
     };
-
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", webhookUrl, true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-
-    const payload = JSON.stringify(message);
-    xhr.send(payload);
-
-    alert("Message successfully sent. We will get back to you as soon as possible!");
-    setCookie("canMessage", false, 1)
+    
+    sendRequest(url, data);
 }
 
-button.addEventListener('click', sendMessage)
+enterButton.addEventListener('click', enter);
