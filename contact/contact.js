@@ -40,13 +40,14 @@ function enter() {
     var message = messageBox.value;
 
     const unsafeChars = /[<>\"'`;()=+&|']/;
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-z0-9.-]+\.[a-zA-Z]{2,}$/
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-z0-9.-]+\.[a-zA-Z]{2,}$/;
+
     if (unsafeChars.test(name) || unsafeChars.test(email) || unsafeChars.test(message)) {
         alert("Un-supported characters used.");
         return;
     }
 
-    if (name == "" || email == "" || message == "") {
+    if (name === "" || email === "" || message === "") {
         alert("Some field is incomplete.");
         return;
     }
@@ -63,7 +64,14 @@ function enter() {
         message: message
     };
     
-    sendRequest(url, data);
+    enterButton.disabled = true;
+    enterButton.textContent = "Sending...";
+
+    sendRequest(url, data).finally(() => {
+        enterButton.disabled = false;
+        enterButton.textContent = "Send";
+    });
 }
+
 
 enterButton.addEventListener('click', enter);
