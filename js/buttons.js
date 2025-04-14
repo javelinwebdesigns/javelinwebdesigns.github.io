@@ -5,7 +5,7 @@ function click() {
 }
 
 buttons.forEach((button) => {
-  if (button.innerHtml.includes("Get") || button.innerHtml.includes("Contact")) {
+  if (button.innerHTML.includes("Get") || button.innerHTML.includes("Contact")) {
     button.addEventListener('click', click);
   }
 });
