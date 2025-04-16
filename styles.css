@@ -23,6 +23,7 @@
 }
 
 .preloader-container svg text {
+    user-select: none;
     animation: 4s ease stroke-animate;
 }
 
@@ -140,7 +141,7 @@ header {
     gap: 2rem;
 }
 
-.hero button {
+.hero .buttons button {
     padding: 1.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -149,25 +150,25 @@ header {
     cursor: pointer;
 }
 
-.hero .get-started {
+.hero .buttons .get-started {
     background-color: #534ef4;
     border: none;
     color: #fff;
     transition: 0.2s;
 }
 
-.hero .get-started:hover {
+.hero .buttons .get-started:hover {
     background-color: #3f3ad6;
 }
 
-.hero .view-work {
+.hero .buttons .view-work {
     background: none;
     border-color: #534ef4;
     color: #534ef4;
     transition: 0.2s;
 }
 
-.hero .view-work:hover {
+.hero .buttons .view-work:hover {
     background-color: #534ef4;
     color: #fff;
 }
