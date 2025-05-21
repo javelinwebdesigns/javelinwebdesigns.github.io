@@ -11,3 +11,7 @@ buttons[0].addEventListener('click', () => {
 buttons[1].addEventListener('click', () => {
     click("https://github.com/NotEvanH");
 });
+
+buttons[2].addEventListener('click', () => {
+    click("https://github.com/UltraCoolName7655");
+});
