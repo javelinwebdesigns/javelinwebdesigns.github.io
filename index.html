@@ -9,198 +9,205 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <div class="preloader-container">
+    <div class="preloader-container" style="display: none;">
         <svg viewBox="0 0 400 160">
             <text x="50%" y="50%" text-anchor="middle">Javelin Web Design</text>
         </svg>
     </div>
 
-    <header>
-        <div class="title">
-            <img src="img/Logo.png" alt="logo" class="logo">
-            <h1 class="title-h1">Javelin Web Design</h1>
-        </div>
-        <button class="contact-us">Contact Us</button>
-    </header>
+    <div class="container">
+        <header>
+            <div class="title">
+                <img src="img/Logo.png" alt="logo" class="logo">
+                <h1 class="title-h1">Javelin Web Design</h1>
+            </div>
+            <button class="contact-us">Contact Us</button>
+        </header>
 
-    <div class="hero">
-        <h1 class="off">Welcome to Javelin Web Design!</h1>
-        <p class="off">Javelin Web Design is a simple website-development firm borne from a group of friends who wanted to learn to program, and it blossomed into so much more. Here on the landing page, you'll learn who we are, what we do, and be able to see some of our work, as well as how to contact us.</p>
-        <div class="buttons off">
-            <button class="get-started">Get Started <i class='bx bx-right-arrow-alt'></i></button>
-            <button class="view-work">About Us</button>
+        <div class="hero">
+            <div class="hero-text">
+                <h1 class="off">Welcome to Javelin Web Design!</h1>
+                <p class="off">Javelin Web Design is a simple website-development firm borne from a group of friends who wanted to learn to program, and it blossomed into so much more. Here on the landing page, you'll learn who we are, what we do, and be able to see some of our work, as well as how to contact us.</p>
+                <div class="buttons off">
+                    <button class="get-started">Get Started <i class='bx bx-right-arrow-alt'></i></button>
+                    <button class="view-work">About Us</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="img/cool_art.png" alt="Design Illustration">
+            </div>
         </div>
+
+        <div class="our-services">
+            <h1 class="off">Our Services</h1>
+            <div class="services off">
+                <div class="service">
+                    <i class='bx bx-code-alt'></i>
+                    <h2>Web Development</h2>
+                    <p>Javelin strives to create professional, creative, and interactive websites for all. We specialise in small businesses and individuals, which is why our pricing is so competitive.</p>
+                </div>
+
+                <div class="service">
+                    <i class='bx bx-code-block'></i>
+                    <h2>Design</h2>
+                    <p>Want to have a website but afraid it'll look very 1990s 'Welcome to my page!'-esque? Here at Javelin, we can help create a website that is both functional and aesthetically pleasing, tailored to your every whim.</p>
+                </div>
+
+                <div class="service">
+                    <i class='bx bx-edit-alt'></i>
+                    <h2>Editing</h2>
+                    <p>Already have a website and want to give it a revamp? Just contact us and we'll get onto it, bringing a possibly dated webpage into the modern era.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="our-work">
+            <h1 class="off">Our Latest Work</h1>
+            <div class="works off">
+                <div class="work">
+                    <img src="img/one.png" alt="image1">
+                    <div class="comment">
+                        <h3>Medical Website</h3>
+                        <p>This is a website we made as a job. PGx is a short-hand form for Pharmacogenomics.</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="img/two.png" alt="image2">
+                    <div class="comment">
+                        <h3>Javelin Web Vault</h3>
+                        <p>A fun website we made for some cybersecurity practice.</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="img/three.png" alt="image3">
+                    <div class="comment">
+                        <h3>Portfolio</h3>
+                        <p>Simple one page portfolio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing">
+            <h1 class="off">Our Pricing</h1>
+            <div class="prices pff">
+                <div class="price">
+                    <h2>Basic</h2>
+                    <h1>50 AUD</h1>
+                    <div class="features">
+                        <div class="feature">
+                            <i class='bx bx-purchase-tag-alt'></i>
+                            <p>One Page</p>
+                        </div>
+                        <div class="feature">
+                            <i class='bx bx-purchase-tag-alt'></i>
+                            <p>Three Revisions</p>
+                        </div>
+                    </div>
+                    <button>Get Started</button>
+                </div>
+                <div class="price-selected">
+                    <h2>Standard</h2>
+                    <h1>75 AUD</h1>
+                    <div class="features">
+                        <div class="feature">
+                            <i class='bx bx-purchase-tag-alt'></i>
+                            <p>Up to Three Pages</p>
+                        </div>
+                        <div class="feature">
+                            <i class='bx bx-purchase-tag-alt'></i>
+                            <p>Six Revisions</p>
+                        </div>
+                    </div>
+                    <button>Get Started</button>
+                </div>
+                <div class="price">
+                    <h2>Premium</h2>
+                    <h1>150 AUD</h1>
+                    <div class="features">
+                        <div class="feature">
+                            <i class='bx bx-purchase-tag-alt'></i>
+                            <p>Up to Six Pages</p>
+                        </div>
+                        <div class="feature">
+                            <i class='bx bx-purchase-tag-alt'></i>
+                            <p>Twelve Revisions</p>
+                        </div>
+                    </div>
+                    <button>Get Started</button>
+                </div>
+                <div class="price">
+                    <h2>Something Else?</h2>
+                    <h1>? AUD</h1>
+                    <div class="features">
+                        <div class="feature">
+                            <i class='bx bx-purchase-tag-alt'></i>
+                            <p>Negotiable Amount of Pages</p>
+                        </div>
+                        <div class="feature">
+                            <i class='bx bx-purchase-tag-alt'></i>
+                            <p>Negotiable Amount of Revisions</p>
+                        </div>
+                    </div>
+                    <button>Get Started</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonials">
+            <h1 class="off">Testimonials</h1>
+            <div class="testimonial off">
+                <p>I hit up Javelin Web Design in need of a portfolio and they delivered, very fast, very efficient, and great customer service they listen to all your needs and are willing to work with you on whatever changes you have, they are awesome! I definitely recommend checking them out!</p>
+                <p class="name">ShiayaRBLX</p>
+                <a href="https://shiayadev.github.io/ShiayaRBLX/">The Site</a>
+            </div>
+
+            <div class="testimonial off">
+                <p>Javelin Web Design built me a custom website and were a dream to work with. They listened our specifications and adapted to our requirements. What made them especially impressive was despite not having a background in the medicine, they were able to engage and implement clinical applications to meet and exceed our expectations. Would highly recommend them to any one requiring a website!</p>
+                <p class="name">Sharon L</p>
+            </div>
+        </div>
+
+        <div class="faqs">
+            <h1 class="off">Frequently Asked Questions</h1>
+            <div class="faq off">
+                <h1>Why choose Javelin Web Design?</h1>
+                <p>When you work with a large website company, there's a very real chance that you'll get overlooked and pay more than you need to. When you work with us, there's no chance we can miss you! Javelin Web Design promises to deliver professional-level websites at shockingly low prices (comparatively).</p>
+            </div>
+            <div class="faq off">
+                <h1>How much does a website cost?</h1>
+                <p>Simply scroll up to view our prepackaged options. Have anything different in mind? That's great! Just contact us with the details, and we can provide a quote on what it would cost for your website.</p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="top">
+                <div class="company">
+                    <h3>Company</h3>
+                    <div class="links">
+                        <a href="https://javelinwebdesign.com/about">About Us</a>
+                        <a href="#">Terms and Conditions</a>
+                        <a href="https://javelinwebdesign.com/contact"">Contact</a>
+                    </div>
+                </div>
+
+                <div class="contact">
+                    <h3>Contact</h3>
+                    <p>javelinwebdesigns@gmail.com</p>
+                </div>
+
+                <div class="socials">
+                    <h3>Socials</h3>
+                    <a href="#"><i class='bx bxl-youtube'></i></a>
+                    <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="bottom">Javelin Web Design</div>
+        </footer>
     </div>
-
-    <div class="our-services">
-        <h1 class="off">Our Services</h1>
-        <div class="services off">
-            <div class="service">
-                <i class='bx bx-code-alt'></i>
-                <h2>Web Development</h2>
-                <p>Javelin strives to create professional, creative, and interactive websites for all. We specialise in small businesses and individuals, which is why our pricing is so competitive.</p>
-            </div>
-
-            <div class="service">
-                <i class='bx bx-code-block'></i>
-                <h2>Design</h2>
-                <p>Want to have a website but afraid it'll look very 1990s 'Welcome to my page!'-esque? Here at Javelin, we can help create a website that is both functional and aesthetically pleasing, tailored to your every whim.</p>
-            </div>
-
-            <div class="service">
-                <i class='bx bx-edit-alt'></i>
-                <h2>Editing</h2>
-                <p>Already have a website and want to give it a revamp? Just contact us and we'll get onto it, bringing a possibly dated webpage into the modern era.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="our-work">
-        <h1 class="off">Our Latest Work</h1>
-        <div class="works off">
-            <div class="work">
-                <img src="img/one.png" alt="image1">
-                <div class="comment">
-                    <h3>Medical Website</h3>
-                    <p>This is a website we made as a job. PGx is a short-hand form for Pharmacogenomics.</p>
-                </div>
-            </div>
-
-            <div class="work">
-                <img src="img/two.png" alt="image2">
-                <div class="comment">
-                    <h3>Javelin Web Vault</h3>
-                    <p>A fun website we made for some cybersecurity practice.</p>
-                </div>
-            </div>
-
-            <div class="work">
-                <img src="img/three.png" alt="image3">
-                <div class="comment">
-                    <h3>Portfolio</h3>
-                    <p>Simple one page portfolio.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="pricing">
-        <h1 class="off">Our Pricing</h1>
-        <div class="prices pff">
-            <div class="price">
-                <h2>Basic</h2>
-                <h1>50 AUD</h1>
-                <div class="features">
-                    <div class="feature">
-                        <i class='bx bx-purchase-tag-alt'></i>
-                        <p>One Page</p>
-                    </div>
-                    <div class="feature">
-                        <i class='bx bx-purchase-tag-alt'></i>
-                        <p>Three Revisions</p>
-                    </div>
-                </div>
-                <button>Get Started</button>
-            </div>
-            <div class="price-selected">
-                <h2>Standard</h2>
-                <h1>75 AUD</h1>
-                <div class="features">
-                    <div class="feature">
-                        <i class='bx bx-purchase-tag-alt'></i>
-                        <p>Up to Three Pages</p>
-                    </div>
-                    <div class="feature">
-                        <i class='bx bx-purchase-tag-alt'></i>
-                        <p>Six Revisions</p>
-                    </div>
-                </div>
-                <button>Get Started</button>
-            </div>
-            <div class="price">
-                <h2>Premium</h2>
-                <h1>150 AUD</h1>
-                <div class="features">
-                    <div class="feature">
-                        <i class='bx bx-purchase-tag-alt'></i>
-                        <p>Up to Six Pages</p>
-                    </div>
-                    <div class="feature">
-                        <i class='bx bx-purchase-tag-alt'></i>
-                        <p>Twelve Revisions</p>
-                    </div>
-                </div>
-                <button>Get Started</button>
-            </div>
-            <div class="price">
-                <h2>Something Else?</h2>
-                <h1>? AUD</h1>
-                <div class="features">
-                    <div class="feature">
-                        <i class='bx bx-purchase-tag-alt'></i>
-                        <p>Negotiable Amount of Pages</p>
-                    </div>
-                    <div class="feature">
-                        <i class='bx bx-purchase-tag-alt'></i>
-                        <p>Negotiable Amount of Revisions</p>
-                    </div>
-                </div>
-                <button>Get Started</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="testimonials">
-        <h1 class="off">Testimonials</h1>
-        <div class="testimonial off">
-            <p>I hit up Javelin Web Design in need of a portfolio and they delivered, very fast, very efficient, and great customer service they listen to all your needs and are willing to work with you on whatever changes you have, they are awesome! I definitely recommend checking them out!</p>
-            <p class="name">ShiayaRBLX</p>
-            <a href="https://shiayadev.github.io/ShiayaRBLX/">The Site</a>
-        </div>
-
-        <div class="testimonial off">
-            <p>Javelin Web Design built me a custom website and were a dream to work with. They listened our specifications and adapted to our requirements. What made them especially impressive was despite not having a background in the medicine, they were able to engage and implement clinical applications to meet and exceed our expectations. Would highly recommend them to any one requiring a website!</p>
-            <p class="name">Sharon L</p>
-        </div>
-    </div>
-
-    <div class="faqs">
-        <h1 class="off">Frequently Asked Questions</h1>
-        <div class="faq off">
-            <h1>Why choose Javelin Web Design?</h1>
-            <p>When you work with a large website company, there's a very real chance that you'll get overlooked and pay more than you need to. When you work with us, there's no chance we can miss you! Javelin Web Design promises to deliver professional-level websites at shockingly low prices (comparatively).</p>
-        </div>
-        <div class="faq off">
-            <h1>How much does a website cost?</h1>
-            <p>Simply scroll up to view our prepackaged options. Have anything different in mind? That's great! Just contact us with the details, and we can provide a quote on what it would cost for your website.</p>
-        </div>
-    </div>
-
-    <footer>
-        <div class="top">
-            <div class="company">
-                <h3>Company</h3>
-                <div class="links">
-                    <a href="https://javelinwebdesign.com/about">About Us</a>
-                    <a href="#">Terms and Conditions</a>
-                    <a href="https://javelinwebdesign.com/contact"">Contact</a>
-                </div>
-            </div>
-
-            <div class="contact">
-                <h3>Contact</h3>
-                <p>javelinwebdesigns@gmail.com</p>
-            </div>
-
-            <div class="socials">
-                <h3>Socials</h3>
-                <a href="#"><i class='bx bxl-youtube'></i></a>
-                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-            </div>
-        </div>
-        <div class="line"></div>
-        <div class="bottom">Javelin Web Design</div>
-    </footer>
 
     <script src="js/scroll.js"></script>
     <script src="js/load.js"></script>
