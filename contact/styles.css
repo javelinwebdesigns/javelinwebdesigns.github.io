@@ -151,6 +151,24 @@ header i {
     background-color: #3f3ad6;
 }
 
+.response-message {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    display: none;
+}
+
+.response-message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.response-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.2rem;
@@ -180,3 +198,4 @@ header i {
         font-size: 0.7rem;
     }
 }
+
