@@ -1,77 +1,45 @@
-console.log("Hello There");
+document.getElementById("submit-btn").addEventListener("click", async function (e) {
+    e.preventDefault();
 
-var nameBox = document.querySelector("#name-box");
-var emailBox = document.querySelector("#email-box");
-var messageBox = document.querySelector("#message-box");
-var enterButton = document.querySelector(".enter-button")
+    const name = document.getElementById("name-box").value.trim();
+    const email = document.getElementById("email-box").value.trim();
+    const message = document.getElementById("message-box").value.trim();
+    const responseDiv = document.getElementById("responseMessage");
+    
+    responseDiv.style.display = "none";
+    responseDiv.className = "response-message";
+    
+    if (!name || !email || !message) {
+        responseDiv.textContent = "⚠️ Please fill out all fields before submitting.";
+        responseDiv.classList.add("error");
+        responseDiv.style.display = "block";
+        return;
+    }
 
-async function sendRequest(url, data) {
     try {
-        const response = await fetch(url, {
+        const res = await fetch("/send", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, message })
         });
 
-        if (response.status === 204 || response.status === 200) { 
-            alert("Thank you for contacting us, we will get back to you as soon as possible.");
-            return;
+        const data = await res.json();
+
+        if (res.ok) {
+            responseDiv.textContent = "✅ " + data.message;
+            responseDiv.classList.add("success");
+            
+            document.getElementById("name-box").value = "";
+            document.getElementById("email-box").value = "";
+            document.getElementById("message-box").value = "";
+        } else {
+            responseDiv.textContent = "❌ " + data.message;
+            responseDiv.classList.add("error");
         }
-
-
-        if (!response.ok) {
-            alert("Something went wrong on our end. Sorry about that.");
-            throw new Error("HTTP Error!");
-        }
-
-        const result = await response.json();
-        alert("Thank you for contacting us, we will get back to you as soon as possible.");
-        return result
-    } catch(error) {
-        alert("Something went wrong on our end. Sorry about that.");
-    }
-};
-
-function enter() {
-    var name = nameBox.value;
-    var email = emailBox.value;
-    var message = messageBox.value;
-
-    const unsafeChars = /[<>\"'`;()=+&|']/;
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-    if (unsafeChars.test(name) || unsafeChars.test(email) || unsafeChars.test(message)) {
-        alert("Un-supported characters used.");
-        return;
+    } catch (err) {
+        responseDiv.textContent = "🚨 An unexpected error occurred: " + err.message;
+        responseDiv.classList.add("error");
     }
 
-    if (name === "" || email === "" || message === "") {
-        alert("Some field is incomplete.");
-        return;
-    }
-
-    if (!emailRegex.test(email)) {
-        alert("Invalid Email");
-        return;
-    }
-
-    const url = "https://unified-early-ox.ngrok-free.app/";
-    const data = {
-        name: name,
-        email: email,
-        message: message
-    };
-    
-    enterButton.disabled = true;
-    enterButton.textContent = "Sending...";
-
-    sendRequest(url, data).finally(() => {
-        enterButton.disabled = false;
-        enterButton.textContent = "Send";
-    });
-}
-
-
-enterButton.addEventListener('click', enter);
+    responseDiv.style.display = "block";
+});
