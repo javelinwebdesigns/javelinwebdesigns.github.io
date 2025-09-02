@@ -1,4 +1,4 @@
-document.getElementById("submit-btn").addEventListener("click", async function (e) {
+document.getElementById("enter-button").addEventListener("click", async function (e) {
     e.preventDefault();
 
     const name = document.getElementById("name-box").value.trim();
@@ -43,3 +43,4 @@ document.getElementById("submit-btn").addEventListener("click", async function (
 
     responseDiv.style.display = "block";
 });
+
