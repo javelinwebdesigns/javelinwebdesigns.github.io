@@ -17,7 +17,7 @@ document.getElementById("enter-button").addEventListener("click", async function
     }
 
     try {
-        const res = await fetch("/send", {
+        const res = await fetch("http://unified-early-ox.ngrok-free.app", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name, email, message })
@@ -43,4 +43,5 @@ document.getElementById("enter-button").addEventListener("click", async function
 
     responseDiv.style.display = "block";
 });
+
 
